@@ -1,0 +1,84 @@
+* {
+  margin-left: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: sans-serif;
+  font-size: 40px;
+  color: rgb(10, 140, 190);
+  background-color: rgb(216, 238, 232);
+  margin-left:  20px;
+}
+
+.game-container {
+  width: 484px;
+}
+
+.game-panel {
+}
+
+.game-board {
+  border: 2px solid blueviolet;
+  position: relative;
+}
+
+h1 {
+  font-size: 40px;
+}
+
+.score {
+  justify-content: space-between;
+  display: flex;
+  font-size: 32px;
+}
+
+.grid {
+  display:flex;
+  flex-wrap: wrap;
+}
+
+.cell {
+  border: 1px solid black;
+  width: 48px;
+  height: 48px;
+  cursor: pointer;
+}
+
+.end-game-screen {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  background-color: rgba(241, 117, 78, 0.5);
+}
+
+.end-game-text {
+  font-size: 48px;
+  text-transform: uppercase;
+  font-family: 'Press Start 2P';
+}
+
+.btn {
+  font-size: 24px;
+  font-family: sans-serif;
+  padding: 4px 20px 4px 20px;
+  cursor: pointer;
+  text-transform: uppercase;
+  border: 2px solid rgb(0, 23, 50);
+}
+
+.btn:hover {
+  background-color: rgb(203, 224, 221);
+}
+
+.hidden {
+  display: none;
+}
