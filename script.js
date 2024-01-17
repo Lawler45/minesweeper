@@ -11,12 +11,22 @@ const bombsList = [];
 
 let score = 0;
 
+function updateScore() {
+  score++;
+  scoreCounter.innerText = score.toString().padStart(5, "0");
+
+  if (score === maxScore) {
+    endGame();
+  }
+}
+
 for (let i = 1; i <= 100; i++) {
   const cell = document.createElement("div");
   cell.classList.add("cell");
 
   cell.addEventListener("click", function () {
     cell.classList.add("cell-clicked");
+    updateScore();
   });
   grid.appendChild(cell);
 }
@@ -27,4 +37,10 @@ while (bombsList.length < totalBombs) {
   if (!bombsList.includes(randomNumber)) {
     bombsList.push(randomNumber);
   }
+}
+
+function endGame() {
+  endGameText.innerHTML = "YOU </BR> WON";
+  endGameScreen.classList.add("win");
+  endGameScreen.classList.remove("hidden");
 }

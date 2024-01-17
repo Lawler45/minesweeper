@@ -60,6 +60,11 @@ h1 {
   background-color: rgba(241, 117, 78, 0.5);
 }
 
+.win {
+  background-color: rgba(0, 200, 0, 0.5)
+}
+
+
 .end-game-text {
   font-size: 48px;
   text-transform: uppercase;
@@ -87,3 +92,4 @@ h1 {
   background-color: rgb(157, 197, 199);
   cursor: not-allowed;
 }
+
