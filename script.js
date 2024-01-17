@@ -44,3 +44,7 @@ function endGame() {
   endGameScreen.classList.add("win");
   endGameScreen.classList.remove("hidden");
 }
+
+playAgainButton.addEventListener("click", function () {
+  window.location.reload();
+});
