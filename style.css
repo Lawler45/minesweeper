@@ -15,8 +15,8 @@ body {
   width: 484px;
 }
 
-.game-panel {
-}
+/* .game-panel {
+} */
 
 .game-board {
   border: 2px solid blueviolet;
@@ -45,6 +45,11 @@ h1 {
   cursor: pointer;
 }
 
+.cell-bomb {
+  background-image: url("./images/bomb.png");
+  background-size: contain;
+}
+
 .end-game-screen {
   position: absolute;
   top: 0;
@@ -61,9 +66,8 @@ h1 {
 }
 
 .win {
-  background-color: rgba(0, 200, 0, 0.5)
+  background-color: rgba(0, 200, 0, 0.5);
 }
-
 
 .end-game-text {
   font-size: 48px;
@@ -92,4 +96,3 @@ h1 {
   background-color: rgb(157, 197, 199);
   cursor: not-allowed;
 }
-
