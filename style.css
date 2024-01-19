@@ -50,6 +50,11 @@ h1 {
   background-size: contain;
 }
 
+.cell-flag {
+  background-image: url("./images/flag.png");
+  background-size: contain;
+}
+
 .end-game-screen {
   position: absolute;
   top: 0;

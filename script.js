@@ -20,7 +20,23 @@ function updateScore() {
   }
 }
 
-for (let i = 1; i <= 100; i++) {
+function handleRightClick(event, cell, index) {
+  event.preventDefault();
+  addFlag(cell);
+}
+
+function addFlag(cell) {
+  if (
+    !cell.classList.contains("cell-clicked") &&
+    !cell.classList.contains("cell-flag")
+  ) {
+    cell.classList.add("cell-flag");
+  } else if (cell.classList.contains("cell-flag")) {
+    cell.classList.remove("cell-flag");
+  }
+}
+
+for (let i = 1; i <= totalCells; i++) {
   const cell = document.createElement("div");
   cell.classList.add("cell");
 
@@ -29,10 +45,14 @@ for (let i = 1; i <= 100; i++) {
       cell.classList.add("cell-bomb");
       endGame(false);
     }
-
     cell.classList.add("cell-clicked");
     updateScore();
   });
+
+  cell.addEventListener("contextmenu", function (event) {
+    handleRightClick(event, cell, i);
+  });
+
   grid.appendChild(cell);
 }
 
