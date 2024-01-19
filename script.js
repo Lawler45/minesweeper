@@ -47,7 +47,7 @@ function addFlag(cell) {
 }
 
 function countNeighbourBombs(cellIndex) {
-  const neighbours = [-11, -10 - 9, -1, 1, 9, 10, 11];
+  const neighbours = [-11, -10, - 9, -1, 1, 9, 10, 11];
 
   return neighbours.filter((neighbour) =>
     bombsList.includes(cellIndex + neighbour)
