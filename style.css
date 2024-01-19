@@ -25,7 +25,7 @@ h1 {
 .game-board {
   border: 2px solid green;
   position: relative;
-  background-color:#FDFD96 ;
+  background-color: #fdfd96;
 }
 
 h1 {
@@ -51,8 +51,10 @@ h1 {
 }
 
 .cell-bomb {
+  background-color: rgb(241, 117, 78);
   background-image: url("./images/bomb.png");
   background-size: contain;
+  cursor: not-allowed;
 }
 
 .cell-flag {

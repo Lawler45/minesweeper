@@ -12,6 +12,15 @@ const bombsList = [];
 let score = 0;
 
 //GAME FUNCTIONS
+
+while (bombsList.length < totalBombs) {
+  const randomNumber = Math.floor(Math.random() * totalCells) + 1;
+
+  if (!bombsList.includes(randomNumber)) {
+    bombsList.push(randomNumber);
+  }
+}
+
 function updateScore() {
   score++;
   scoreCounter.innerText = score.toString().padStart(5, "0");
@@ -43,6 +52,18 @@ function countNeighbourBombs(cellIndex) {
   return neighbours.filter((neighbour) =>
     bombsList.includes(cellIndex + neighbour)
   ).length;
+}
+
+function revealAllBombs() {
+  const cells = document.querySelectorAll(".cell");
+
+  for (let i = 1; i <= cells.length; i++) {
+    const cell = cells[i - 1];
+
+    if (bombsList.includes(i)) {
+      cell.classList.add("cell-bomb");
+    }
+  }
 }
 
 //GAME FUNCTIONAILITY
@@ -78,20 +99,13 @@ for (let i = 1; i <= totalCells; i++) {
   grid.appendChild(cell);
 }
 
-while (bombsList.length < totalBombs) {
-  const randomNumber = Math.floor(Math.random() * totalCells) + 1;
-
-  if (!bombsList.includes(randomNumber)) {
-    bombsList.push(randomNumber);
-  }
-}
-
 function endGame(isVictory) {
   if (isVictory) {
     endGameText.innerHTML = "YOU </BR> WON";
     endGameScreen.classList.add("win");
   }
 
+  revealAllBombs();
   endGameScreen.classList.remove("hidden");
 }
 
