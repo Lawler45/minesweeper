@@ -6,21 +6,26 @@
 body {
   font-family: sans-serif;
   font-size: 40px;
-  color: rgb(10, 140, 190);
-  background-color: rgb(216, 238, 232);
-  margin-left: 20px;
+  color: #666666;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-image: url("./images/background.jpg");
+}
+
+h1 {
+  text-align: center;
 }
 
 .game-container {
   width: 484px;
 }
 
-/* .game-panel {
-} */
-
 .game-board {
-  border: 2px solid blueviolet;
+  border: 2px solid green;
   position: relative;
+  background-color:#FDFD96 ;
 }
 
 h1 {
