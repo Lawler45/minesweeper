@@ -55,6 +55,19 @@ h1 {
   background-size: contain;
 }
 
+.cell-number-low {
+  text-align: center;
+  color: green;
+}
+.cell-number-medium {
+  text-align: center;
+  color: yellow;
+}
+.cell-number-high {
+  text-align: center;
+  color: red;
+}
+
 .end-game-screen {
   position: absolute;
   top: 0;

@@ -5,12 +5,13 @@ const endGameText = document.querySelector(".end-game-text");
 const playAgainButton = document.querySelector(".play-again");
 
 const totalCells = 100;
-const totalBombs = 10;
-const maxScore = 5;
+const totalBombs = 20;
+const maxScore = 40;
 const bombsList = [];
 
 let score = 0;
 
+//GAME FUNCTIONS
 function updateScore() {
   score++;
   scoreCounter.innerText = score.toString().padStart(5, "0");
@@ -36,6 +37,15 @@ function addFlag(cell) {
   }
 }
 
+function countNeighbourBombs(cellIndex) {
+  const neighbours = [-11, -10 - 9, -1, 1, 9, 10, 11];
+
+  return neighbours.filter((neighbour) =>
+    bombsList.includes(cellIndex + neighbour)
+  ).length;
+}
+
+//GAME FUNCTIONAILITY
 for (let i = 1; i <= totalCells; i++) {
   const cell = document.createElement("div");
   cell.classList.add("cell");
@@ -44,6 +54,18 @@ for (let i = 1; i <= totalCells; i++) {
     if (bombsList.includes(i)) {
       cell.classList.add("cell-bomb");
       endGame(false);
+    } else {
+      const neighbourBombCount = countNeighbourBombs(i);
+      if (neighbourBombCount > 0) {
+        cell.innerText = neighbourBombCount;
+        if (cell.innerText <= 2) {
+          cell.classList.add("cell-number-low");
+        } else if (cell.innerText === 3) {
+          cell.classList.add("cell-number-medium");
+        } else {
+          cell.classList.add("cell-number-high");
+        }
+      }
     }
     cell.classList.add("cell-clicked");
     updateScore();
